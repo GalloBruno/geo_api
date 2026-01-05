@@ -358,7 +358,7 @@ export const docsView = (data) => `
           </p>
           
           <div style="background: var(--surface-light); padding: 1rem; border-left: 4px solid var(--primary); border-radius: 4px; box-shadow: var(--shadow-sm);">
-            <strong>Base URL:</strong> <code style="background:transparent; color: var(--text-main);">https://geo-api-black.vercel.app/</code>
+            <strong>Base URL:</strong> <code style="background:transparent; color: var(--text-main);">https://geo-api-fawn.vercel.app/</code>
           </div>
         </section>
 
@@ -405,7 +405,7 @@ async function getLocationData() {
 
     // 2. Consultar Geo API
     const response = await fetch(
-      \`https://geo-api-black.vercel.app/geolocation?lat=\${latitude}&lon=\${longitude}\`
+      \`https://geo-api-fawn.vercel.app/geolocation?lat=\${latitude}&lon=\${longitude}\`
     );
     
     if (!response.ok) throw new Error('Error en la petición');

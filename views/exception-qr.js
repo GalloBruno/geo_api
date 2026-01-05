@@ -278,7 +278,7 @@ export const excepctionQR = () => `
     <div class="usage-section">
         <h5>💡 Ejemplo de uso:</h5>
         <div class="code-block">
-            https://geo-api-black.vercel.app/qr?<span class="code-highlight">url=https://neo-wifi.vercel.app</span>
+            https://geo-api-fawn.vercel.app/qr?<span class="code-highlight">url=https://neo-wifi.vercel.app</span>
         </div>
     </div>
     
