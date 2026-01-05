@@ -1,0 +1,25 @@
+{
+  "name": "geo-api",
+  "version": "1.0.1",
+  "description": "Geolocation app",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node --watch src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch src/index.js"
+  },
+  "keywords": [],
+  "author": "GalloBruno",
+  "license": "ISC",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.6",
+    "chalk": "^5.4.1",
+    "cors": "2.8.5",
+    "express": "^4.21.1",
+    "express-rate-limit": "^7.5.0",
+    "iso-3166": "^4.3.0",
+    "moment-timezone": "^0.5.46",
+    "qrcode": "^1.5.4"
+  }
+}
