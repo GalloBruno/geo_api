@@ -18,7 +18,6 @@
 - 📊 **Analytics** - Request logging via Supabase
 - 🎨 **Interactive UI** - Beautiful web interface with location visualization
 - 📖 **API Documentation** - Built-in docs at `/docs`
-- 🔗 **QR Code Generator** - Create QR codes from URLs
 
 ---
 
@@ -151,36 +150,6 @@ GET /docs
 ```
 Interactive documentation page with examples and usage instructions.
 
-### 🔗 QR Code Generator
-```
-GET /qr?url={url}
-```
-
-**Parameters:**
-- `url` (required) - URL to encode in QR code
-
-**Example:**
-```
-GET /qr?url=https://example.com
-```
-
-Returns an HTML page with the generated QR code.
-
-### 🔗 QR Code Data URL
-```
-GET /qr/buffer?text={text}
-```
-
-**Parameters:**
-- `text` (required) - Text to encode in QR code
-
-**Response:**
-```json
-{
-  "dataBaseURL": "data:image/png;base64,iVBORw0KG..."
-}
-```
-
 ---
 
 ## 🛠️ Tech Stack
@@ -191,7 +160,6 @@ GET /qr/buffer?text={text}
 - **Deployment:** Vercel
 - **CDN:** jsDelivr (for geo data)
 - **Libraries:**
-  - `qrcode` - QR code generation
   - `express-rate-limit` - API rate limiting
   - `cors` - Cross-origin resource sharing
   - `moment-timezone` - Timezone handling
@@ -208,8 +176,7 @@ geo_api/
 ├── routes/
 │   └── router.js             # API route definitions
 ├── controller/
-│   ├── GeoController.js      # Geolocation endpoints
-│   └── QrCodeController.js   # QR code generation
+│   └── GeoController.js      # Geolocation endpoints
 ├── services/
 │   ├── get-location-info.js  # Extract Vercel headers
 │   ├── get-cities.js         # Fetch cities from CDN
@@ -222,9 +189,7 @@ geo_api/
 │   └── load-env.js           # Environment loader
 ├── views/
 │   ├── main-view.js          # Home page HTML
-│   ├── docs.js               # Documentation page
-│   ├── qr-code.js            # QR code display page
-│   └── exception-qr.js       # QR error page
+│   └── docs.js               # Documentation page
 ├── assets/
 │   ├── geo-data.json         # Argentine cities data
 │   ├── world-airports.json   # Worldwide airports data

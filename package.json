@@ -19,7 +19,6 @@
     "express": "^4.21.1",
     "express-rate-limit": "^7.5.0",
     "iso-3166": "^4.3.0",
-    "moment-timezone": "^0.5.46",
-    "qrcode": "^1.5.4"
+    "moment-timezone": "^0.5.46"
   }
 }
