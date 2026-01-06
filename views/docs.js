@@ -1,10 +1,10 @@
 export const docsView = (data) => `
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Geo API - Documentation</title>
+    <title>Geo API - Documentación</title>
     <meta name="color-scheme" content="light dark" />
     
     <!-- Fonts -->
@@ -17,283 +17,22 @@ export const docsView = (data) => `
     
     <link
       rel="shortcut icon"
-      href="https://raw.githubusercontent.com/GalloBruno/PortfolioenVercel/main/src/assets/img/BrunoLinkendinCircularRecortado.png"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>▲</text></svg>"
     />
 
+    <link rel="stylesheet" href="/assets/css/style.css" />
     <style>
-      :root {
-        /* Core Palette - Consistent with Main View */
-        --primary: #6366f1;
-        --primary-hover: #4f46e5;
-        --surface-light: rgba(255, 255, 255, 0.95);
-        --surface-dark: rgba(15, 23, 42, 0.95);
-        --glass-light: rgba(255, 255, 255, 0.7);
-        --glass-dark: rgba(15, 23, 42, 0.7);
-        --bg-light: #f8fafc;
-        --bg-dark: #0f172a;
-        --text-main: #0f172a;
-        --text-muted: #64748b;
-        --border-light: rgba(226, 232, 240, 1);
-        --border-dark: rgba(51, 65, 85, 0.5);
-        --accent-gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-        --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-        
-        /* Syntax Highlighting */
-        --sh-class: #d19a66;
-        --sh-identifier: #61afef;
-        --sh-keyword: #c678dd;
-        --sh-string: #98c379;
-      }
-
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --surface-light: rgba(30, 41, 59, 0.95);
-          --text-main: #f8fafc;
-          --text-muted: #94a3b8;
-          --border-light: rgba(51, 65, 85, 0.5);
-          --bg-light: #0f172a; /* Force dark bg in dark mode */
-        }
-      }
-
-      * { box-sizing: border-box; margin: 0; padding: 0; }
-
-      body {
-        font-family: 'Inter', sans-serif;
-        background-color: var(--bg-light);
-        color: var(--text-main);
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-      }
-
-      @media (prefers-color-scheme: dark) {
-         body { background-color: var(--bg-dark); }
-      }
-
-      /* Layout Grid */
-      .layout {
-        display: grid;
-        grid-template-columns: 280px 1fr;
-        max-width: 1400px;
-        margin: 0 auto;
-        width: 100%;
-        min-height: 100vh;
-      }
-
-      /* Sidebar Navigation */
-      .sidebar {
-        position: sticky;
-        top: 0;
-        height: 100vh;
-        overflow-y: auto;
-        padding: 2rem 1.5rem;
-        border-right: 1px solid var(--border-light);
-        background: var(--surface-light);
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-      }
-
-      .brand {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        font-weight: 700;
-        font-size: 1.25rem;
-        color: var(--text-main);
-        text-decoration: none;
-      }
-      
-      .brand-icon {
-        width: 32px;
-        height: 32px;
-        background: var(--accent-gradient);
-        border-radius: 8px;
-        display: grid;
-        place-items: center;
-        color: white;
-      }
-
-      .nav-links {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-      }
-
-      .nav-link {
-        padding: 0.5rem 0.75rem;
-        border-radius: 6px;
-        color: var(--text-muted);
-        text-decoration: none;
-        font-size: 0.9rem;
-        font-weight: 500;
-        transition: all 0.2s;
-      }
-
-      .nav-link:hover {
-        background: rgba(99, 102, 241, 0.1);
-        color: var(--primary);
-      }
-      
-      .nav-link.active {
-        background: rgba(99, 102, 241, 0.1);
-        color: var(--primary);
-        font-weight: 600;
-      }
-
-      /* Main Content */
-      .main-content {
-        padding: 3rem 4rem;
-        max-width: 900px;
-      }
-
-      /* Headers */
-      h1 {
-        font-size: 2.5rem;
-        font-weight: 800;
-        letter-spacing: -0.02em;
-        margin-bottom: 1rem;
-        line-height: 1.2;
-        background: var(--accent-gradient);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-
-      h2 {
-        font-size: 1.75rem;
-        font-weight: 700;
-        margin-top: 3rem;
-        margin-bottom: 1.5rem;
-        padding-bottom: 0.5rem;
-        border-bottom: 1px solid var(--border-light);
-        letter-spacing: -0.01em;
-      }
-
-      h3 {
-        font-size: 1.25rem;
-        font-weight: 600;
-        margin-top: 2rem;
-        margin-bottom: 1rem;
-        color: var(--text-main);
-      }
-
-      p {
-        line-height: 1.7;
-        margin-bottom: 1.5rem;
-        color: var(--text-muted);
-        font-size: 1.05rem;
-      }
-
-      /* Language Selector */
-      .lang-selector {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.5rem;
-        background: rgba(0,0,0,0.05);
-        border-radius: 8px;
-        margin-bottom: 1rem;
-      }
-
-      select {
-        background: transparent;
-        border: none;
-        font-family: 'Inter', sans-serif;
-        color: var(--text-main);
-        font-size: 0.9rem;
-        font-weight: 500;
-        cursor: pointer;
-        outline: none;
-        width: 100%;
-      }
-
-      /* Code Blocks */
-      pre {
-        background: #1e1e1e;
-        border-radius: 12px;
-        padding: 1.5rem;
-        overflow-x: auto;
-        margin: 1.5rem 0;
-        box-shadow: var(--shadow-sm);
-        border: 1px solid var(--border-dark);
-      }
-
-      code {
-        font-family: 'JetBrains Mono', monospace;
-        font-size: 0.9rem;
-        color: #e2e8f0;
-        line-height: 1.5;
-      }
-
-      /* Inline Code */
-      p code, li code {
-        background: rgba(99, 102, 241, 0.1);
-        color: var(--primary);
-        padding: 0.2rem 0.4rem;
-        border-radius: 4px;
-        font-size: 0.85em;
-        font-family: 'JetBrains Mono', monospace;
-      }
-
-      /* Links */
-      a {
-        color: var(--primary);
-        text-decoration: none;
-        font-weight: 500;
-        border-bottom: 1px solid transparent;
-        transition: border-bottom 0.2s;
-      }
-      
-      a:hover {
-        border-bottom-color: var(--primary);
-      }
-
-      /* Lists */
-      ul {
-        padding-left: 1.5rem;
-        margin-bottom: 1.5rem;
-      }
-
-      li {
-        margin-bottom: 0.5rem;
-        color: var(--text-muted);
-        line-height: 1.6;
-      }
-
-      /* Endpoint Badge */
-      .endpoint {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.5rem 1rem;
-        background: rgba(34, 197, 94, 0.1);
-        color: #16a34a;
-        border-radius: 99px;
-        font-family: 'JetBrains Mono', monospace;
-        font-size: 0.9rem;
-        font-weight: 600;
-        margin-bottom: 1rem;
-      }
-
-      /* Mobile */
+      /* Docs specific minimal overrides */
+      .layout { display: grid; grid-template-columns: 280px 1fr; max-width: 1400px; margin: 0 auto; min-height: 100vh; }
+      .sidebar { position: sticky; top: 0; height: 100vh; overflow-y: auto; border-right: 1px solid var(--accents-2); padding: 2rem 1.5rem; }
+      .main-content { padding: 3rem 4rem; max-width: 900px; }
+      .brand-icon { background: var(--geist-foreground); color: var(--geist-background); display: grid; place-items: center; width: 32px; height: 32px; border-radius: 6px; }
+      .nav-link { display: block; padding: 0.5rem 0.75rem; border-radius: 6px; color: var(--accents-5); text-decoration: none; transition: all 0.2s; }
+      .nav-link:hover { background: var(--accents-1); color: var(--geist-foreground); }
       @media (max-width: 768px) {
-        .layout {
-          grid-template-columns: 1fr;
-        }
-        
-        .sidebar {
-          height: auto;
-          position: relative;
-          border-right: none;
-          border-bottom: 1px solid var(--border-light);
-          padding: 1.5rem;
-        }
-        
-        .main-content {
-          padding: 2rem 1.5rem;
-        }
-
-        h1 { font-size: 2rem; }
+        .layout { grid-template-columns: 1fr; }
+        .sidebar { display: none; }
+        .main-content { padding: 1.5rem; }
       }
     </style>
   </head>
@@ -301,14 +40,14 @@ export const docsView = (data) => `
     <div class="layout">
       <!-- Sidebar -->
       <aside class="sidebar">
-        <a href="/" class="brand">
+        <a href="/" class="flex items-center gap-2" style="font-weight: 700; font-size: 1.25rem; margin-bottom: 2rem; color: inherit; text-decoration: none;">
           <div class="brand-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
+             <!-- Vercel-style Triangle Logo -->
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 1L24 22H0L12 1Z" />
+             </svg>
           </div>
-          <span>Geo API</span>
+          <span style="letter-spacing: -0.02em;">Geo API</span>
         </a>
 
         <div class="lang-selector">
@@ -353,8 +92,8 @@ export const docsView = (data) => `
           </div>
           
           <p>
-            La <strong>Geo API</strong> permite obtener información geográfica detallada basada en IP o coordenadas (latitud/longitud).
-            Diseñada para ser rápida, sencilla y fácil de integrar en cualquier aplicación frontend o backend.
+            La <strong>Geo API</strong> proporciona inteligencia de ubicación precisa basada en IP o coordenadas. 
+            Arquitectura de baja latencia optimizada para integración inmediata en aplicaciones web y servicios backend.
           </p>
           
           <div style="background: var(--surface-light); padding: 1rem; border-left: 4px solid var(--primary); border-radius: 4px; box-shadow: var(--shadow-sm);">
@@ -366,13 +105,13 @@ export const docsView = (data) => `
         <section id="endpoints">
           <h2>Endpoints</h2>
           
-          <h3>1. Geolocalización Automática</h3>
-          <p>Detecta automáticamente la ubicación del cliente a partir de su dirección IP.</p>
+          <h3>1. Detección por IP</h3>
+          <p>Identifica la ubicación del cliente mediante inspección de dirección IP en tiempo real.</p>
           <div class="endpoint">GET /location</div>
           <pre><code>\n${JSON.stringify(data, null, 2)}</code></pre>
 
-          <h3>2. Geolocalización por Coordenadas</h3>
-          <p>Obtén información precisa enviando latitud y longitud.</p>
+          <h3>2. Geocodificación Inversa</h3>
+          <p>Recupera metadatos geográficos detallados a partir de coordenadas.</p>
           <div class="endpoint">GET /geolocation</div>
           <p>
             Parámetros:
@@ -388,9 +127,9 @@ export const docsView = (data) => `
 
         <!-- Frontend Usage -->
         <section id="uso-coordenadas">
-          <h2>Implementación Frontend</h2>
+          <h2>Integración en Cliente</h2>
           <p>
-            Ejemplo moderno de cómo consumir la API utilizando <code>async/await</code> y la API de Geolocalización del navegador.
+            Implementación asíncrona utilizando API de Geolocalización nativa.
           </p>
           
           <pre><code>
@@ -449,19 +188,19 @@ async function getLocationData() {
           <h2>Códigos de Estado</h2>
           <div style="display: grid; gap: 1rem;">
              <div style="display: flex; gap: 1rem; align-items: baseline;">
-                <code style="color: #22c55e; min-width: 60px;">200</code>
+                <code style="color: var(--success); min-width: 60px;">200</code>
                 <span><strong>OK</strong> - Petición exitosa.</span>
              </div>
              <div style="display: flex; gap: 1rem; align-items: baseline;">
-                <code style="color: #eab308; min-width: 60px;">400</code>
+                <code style="color: var(--warning); min-width: 60px;">400</code>
                 <span><strong>Bad Request</strong> - Parámetros faltantes o inválidos.</span>
              </div>
              <div style="display: flex; gap: 1rem; align-items: baseline;">
-                <code style="color: #ef4444; min-width: 60px;">429</code>
+                <code style="color: var(--accents-5); min-width: 60px;">429</code>
                 <span><strong>Too Many Requests</strong> - Límite de 60 req/hora excedido.</span>
              </div>
              <div style="display: flex; gap: 1rem; align-items: baseline;">
-                <code style="color: #a855f7; min-width: 60px;">500</code>
+                <code style="color: var(--error); min-width: 60px;">500</code>
                 <span><strong>Internal Server Error</strong> - Error procesando la solicitud.</span>
              </div>
           </div>

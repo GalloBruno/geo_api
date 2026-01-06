@@ -6,13 +6,14 @@
  * 
  * @author GalloBruno
  * @version 1.0.1
+ * @updated 2026-01-05
  */
 
+import '../utils/preload-env.js'
 import express from 'express'
 import cors from 'cors'
 import rateLimit from 'express-rate-limit'
 import { geoRouter } from '../routes/router.js'
-// import { loadEnv } from '../utils/load-env.js'
 
 const app = express()
 

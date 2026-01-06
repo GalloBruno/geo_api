@@ -1,7 +1,7 @@
 {
   "name": "geo-api",
   "version": "1.0.1",
-  "description": "Geolocation app",
+  "description": "High-precision IP & Coordinate-based Geolocation API.",
   "main": "index.js",
   "type": "module",
   "scripts": {

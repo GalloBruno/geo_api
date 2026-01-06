@@ -10,14 +10,13 @@
 
 ## ✨ Features
 
-- 🗺️ **IP-based Geolocation** - Automatic location detection using Vercel's geolocation headers
-- 📍 **Coordinate-based Queries** - Find location details from latitude/longitude
-- ✈️ **Nearest Airport Finder** - Calculates closest airport using Haversine formula
-- 🏛️ **City Center Distance** - Distance to nearest city center/plaza
-- 🔒 **Rate Limiting** - 60 requests per 15 minutes per IP
-- 📊 **Analytics** - Request logging via Supabase
-- 🎨 **Interactive UI** - Beautiful web interface with location visualization
-- 📖 **API Documentation** - Built-in docs at `/docs`
+- 🗺️ **IP-based Geolocation** - Real-time location detection inspired by Vercel edge headers.
+- 📍 **Reverse Geocoding** - Precise metadata retrieval from specific coordinates.
+- ✈️ **Proximity Intelligence** - Calculates nearest airport and city centers using Haversine algorithm.
+- 🔒 **Rate Limiting** - 60 requests/15min per IP protection.
+- 📊 **Analytics** - Full query logging via Supabase integration.
+- 🎨 **Modern Interface** - Minimalist, Vercel-inspired dark/light mode UI with raw JSON visualization.
+- 📖 **Developer Docs** - Integrated technical documentation at `/docs`.
 
 ---
 
@@ -68,7 +67,7 @@
 ```
 GET /
 ```
-Interactive web page showing your current location based on IP.
+Minimalist dashboard providing real-time client location telemetry and raw JSON payload inspection.
 
 ### 📍 Get Location from IP
 ```
