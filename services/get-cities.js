@@ -14,7 +14,7 @@
  */
 const getAllCitiesAR = async () => {
   const response = await fetch(
-    'https://cdn.jsdelivr.net/gh/GalloBruno/geo_api@master/assets/geo-data.json'
+    'https://cdn.jsdelivr.net/gh/GalloBruno/geo_api@master/public/assets/geo-data.json'
   );
   const jsonData = await response.json();
 

@@ -12,7 +12,7 @@
  */
 export const getAllAirports = async () => {
   const response = await fetch(
-    'https://cdn.jsdelivr.net/gh/GalloBruno/geo_api@master/assets/world-airports.json'
+    'https://cdn.jsdelivr.net/gh/GalloBruno/geo_api@master/public/assets/world-airports.json'
   );
   const airports = await response.json();
 

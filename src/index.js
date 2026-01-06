@@ -31,7 +31,7 @@ const corsOptions = {
 app.use(express.json())
 app.use(cors(corsOptions))
 app.disable('x-powered-by') // Hide Express signature for security
-app.use('/assets', express.static('assets')) // Serve static files from assets directory
+app.use(express.static('public')) // Serve static files from public directory
 
 /**
  * Rate Limiter Configuration
