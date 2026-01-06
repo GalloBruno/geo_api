@@ -4,7 +4,7 @@
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/GalloBruno/geo_api)
 
-**Live Demo:** [https://geo-api-fawn.vercel.app](https://geo-api-fawn.vercel.app)
+**Live Demo:** [https://geo-api-fawn.vercel.app](https://geo-api-azure.vercel.app/)
 
 ---
 
